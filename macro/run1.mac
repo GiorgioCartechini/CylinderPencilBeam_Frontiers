@@ -1,0 +1,35 @@
+#########################
+# Set of the verboses 
+#
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 1
+/event/verbose 0
+
+
+########################################
+/physic/addPhysics HADRONTHERAPY_1                   
+
+#######################################
+/run/numberOfThreads 6
+/run/initialize
+# Set the primary particle type,
+# energy and position along the X direction
+#
+#---------------------------gps-----------------
+
+/changeAbsorberTumor/AbsMaterial G4_PLEXIGLASS
+#/changeAbsorberTumor/TumorMaterial G4_PLEXIGLASS
+
+
+#/changeAbsorberTumor/AbsMaterial G4_A-150_TISSUE
+#/changeAbsorberTumor/TumorMaterial G4_A-150_TISSUE
+
+/gps/particle proton
+/gps/position 0 0 -2 cm
+/gps/direction 0 0 1
+/gps/ene/mono 100 MeV
+
+######################################
+
+/run/beamOn 10000000

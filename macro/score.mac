@@ -1,0 +1,34 @@
+########################################
+#
+# define scoring mesh
+#
+/score/create/boxMesh boxMesh_1
+#
+/score/mesh/boxSize 15. 15. 15. cm
+/score/mesh/nBin 150 150 150
+/score/mesh/translate/xyz 15 0 0 cm 
+#
+/score/quantity/doseDeposit dose
+#
+/score/close
+#
+/score/list
+#
+########################################
+#
+#/control/verbose 2
+#/run/verbose 1
+#/gun/particle e-
+#/run/beamOn 2000
+#
+########################################
+#
+# Dump scorers to a file
+#
+#/score/dumpQuantityToFile boxMesh_1 dose Dose.txt
+#/score/dumpQuantityToFile boxMesh_1 nOfStepGamma nOfStepGamma.txt
+#/score/dumpQuantityToFile boxMesh_1 nOfStepEMinus nOfStepEMinus.txt
+#/score/dumpQuantityToFile boxMesh_1 nOfStepEPlus nOfStepEPlus.txt
+#
+#
+

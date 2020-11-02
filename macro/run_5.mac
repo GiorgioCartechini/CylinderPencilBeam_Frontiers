@@ -1,0 +1,66 @@
+#########################
+# Set of the verboses 
+#
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 1
+/event/verbose 0
+
+
+########################################
+/physic/addPhysics HADRONTHERAPY_1                  
+
+#######################################
+/run/numberOfThreads 32
+/run/initialize
+#/run/setCut 1 mm
+#######################################
+
+/gps/particle proton
+/gps/ene/mono 5 MeV
+/gps/position 0 0 -2 cm
+/gps/direction 0 0 1
+######################################
+
+/changeAbsorberTumor/AbsMaterial G4_BRAIN_ICRP
+#/changeAbsorberTumor/TumorMaterial $MAT
+/changeAbsorberTumor/TumorMaterial Cu63
+#/changeAbsorberTumor/TumorMaterial Sc45
+#/changeAbsorberTumor/TumorMaterial Y89
+
+
+#/changeAbsorberTumor/AbsMaterial G4_PLEXIGLASS
+#/changeAbsorberTumor/TumorMaterial G4_PLEXIGLASS
+
+
+#/changeAbsorberTumor/AbsMaterial G4_A-150_TISSUE
+#/changeAbsorberTumor/TumorMaterial G4_A-150_TISSUE
+
+
+# define scoring mesh
+#
+#/score/create/boxMesh boxMesh_1
+#
+#/score/mesh/boxSize 5. 5. 5. cm
+#/score/mesh/nBin 1 1 400
+#/score/mesh/translate/xyz 0 0 5 cm
+#
+#/score/quantity/doseDeposit dose
+#
+#/score/close
+#
+#/score/list
+#
+########################################
+#
+#
+########################################
+#
+#/event/printEventNumber 10000
+/run/printProgress 200000000
+/run/beamOn 2000000000
+
+# Dump scorers to a file
+#
+#/score/dumpQuantityToFile boxMesh_1 dose Dose_AbsBrain_Tum63Cu_1cmTrans.csv
+#
